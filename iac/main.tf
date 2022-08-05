@@ -16,7 +16,7 @@ resource "digitalocean_kubernetes_cluster" "kube01" {
   name   = var.k8s_name
   region = var.region
   # Grab the latest version slug from `doctl kubernetes options versions`
-  version = "1.22.8-do.1"
+  version = "1.23.9-do.0"
 
   node_pool {
     name       = "default"
@@ -38,7 +38,7 @@ resource "digitalocean_kubernetes_node_pool" "kube01_nodepool" {
 
 resource "local_file" "kube_config" {
     content  = digitalocean_kubernetes_cluster.kube01.kube_config.0.raw_config
-    filename = "E:\CHAVES\DIGOCE\kube_config.yaml"
+    filename = "~kube_config.yaml"
 }
 
 variable "tkn" {}
