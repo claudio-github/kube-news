@@ -16,7 +16,7 @@ resource "digitalocean_kubernetes_cluster" "kube01" {
   name   = var.k8s_name
   region = var.region
   # Grab the latest version slug from `doctl kubernetes options versions`
-  version = "1.23.9-do.0"
+  version = "1.21.14-do.1"
 
   node_pool {
     name       = "default"
