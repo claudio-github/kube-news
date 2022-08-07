@@ -38,7 +38,7 @@ resource "digitalocean_kubernetes_node_pool" "kube01_nodepool" {
 
 resource "local_file" "kube_config" {
     content  = digitalocean_kubernetes_cluster.kube01.kube_config.0.raw_config
-    filename = "~kube_config.yaml"
+    filename = "$HOME/kube_config.yaml"
 }
 
 variable "tkn" {}
